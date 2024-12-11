@@ -1,0 +1,41 @@
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+       int n=nums.size();
+      /* int i,m=0;
+        sort(nums.begin(),nums.end());
+        for(i=0;i<n;i++)
+        {
+            if(nums[i]==m)
+            {
+                m++;
+            }
+        }
+        return m;
+        
+    }*/
+
+   int i,sum=0;
+    int sum1=n*(n+1)/2;
+
+    for(i=0;i<n ;i++)
+    {
+ sum+=nums[i];
+    }
+    int m=sum1-sum;
+    return m;
+    }
+    /*
+    class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int n = nums.size();
+        int result = n;  // Start with n because it will be XORed last
+        for (int i = 0; i < n; ++i) {
+            result ^= i ^ nums[i];  // XOR both the index and the number
+        }
+        return result;
+    }*/
+};
+
+
